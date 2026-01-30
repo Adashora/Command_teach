@@ -9,9 +9,11 @@ import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Pivot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
@@ -24,10 +26,14 @@ public class RobotContainer {
 
 
   private final Drivetrain dt = new Drivetrain(); //creating drivetrain insatnce
+  private final Pivot pivot = new Pivot(); //creating pivot instance
 
 
 Joystick r_Joystick = new Joystick(0);
 Joystick l_Joystick = new Joystick(1);
+
+private JoystickButton pivot_up = new JoystickButton(r_Joystick, 2);
+  private JoystickButton pivot_down= new JoystickButton(r_Joystick, 3);
 
 
   // The robot's subsystems and commands are defined here...

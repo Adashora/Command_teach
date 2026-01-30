@@ -21,6 +21,8 @@ public final class Constants {
 
   public static final int pivot_motor_id = 5;
 
+  public static final double pivot_speed = 0.5;
+
 
 
 
