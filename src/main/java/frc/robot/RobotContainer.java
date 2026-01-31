@@ -7,6 +7,7 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.Pivot_c;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Pivot;
@@ -47,6 +48,9 @@ private JoystickButton pivot_up = new JoystickButton(r_Joystick, 2);
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+
+    pivot_up.whileTrue(new Pivot_c(pivot, pivot_up, pivot_down));
+    pivot_down.whileTrue(new Pivot_c(pivot, pivot_up, pivot_down));
   }
 
   /**
