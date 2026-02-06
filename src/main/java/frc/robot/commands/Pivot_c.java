@@ -12,17 +12,20 @@ import frc.robot.subsystems.Pivot;
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class Pivot_c extends Command {
 
-  Pivot pivot;
+  Pivot pt;
   JoystickButton pivot_up;
   JoystickButton pivot_down;
 
   /** Creates a new Pivot_c. */
-  public Pivot_c(Pivot pivot, JoystickButton pivot_up, JoystickButton pivot_down) {
+  public Pivot_c(Pivot pt, JoystickButton pivot_up, JoystickButton pivot_down) {
 
-    this.pivot = pivot;
+    this.pt = pt;
     this.pivot_up = pivot_up;
     this.pivot_down = pivot_down;
+
+  
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(this.pt);
   }
 
   // Called when the command is initially scheduled.
@@ -33,7 +36,7 @@ public class Pivot_c extends Command {
   @Override
   public void execute() {
 
-    this.pivot.pivot(Constants.pivot_speed, this.pivot_up, this.pivot_down);
+    this.pt.pivot(Constants.pivot_speed, this.pivot_up, this.pivot_down);
   }
 
   // Called once the command ends or is interrupted.
